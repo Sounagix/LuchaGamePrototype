@@ -87,7 +87,10 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         if (!life.IsDeath())
+        {
             transform.LookAt(enemy.transform);
-        //transform.rotation = Quaternion.Euler(0, transform.rotation.y, 0);
+            Quaternion currentRotation = transform.rotation;
+            transform.rotation = Quaternion.Euler(0, currentRotation.eulerAngles.y, 0);
+        }
     }
 }
