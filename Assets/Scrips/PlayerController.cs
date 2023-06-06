@@ -71,6 +71,15 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Back"",
+                    ""type"": ""Button"",
+                    ""id"": ""e3637b5e-f1ef-4424-a194-b5e406d9d5f4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -88,7 +97,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""a1c7ef3a-e33d-4dee-8863-c6d067e9c72e"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -99,7 +108,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""026ca0d0-4a0d-4477-ae7a-d1d6caed1b3b"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -110,7 +119,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""db1eedd4-77c9-49fe-ab0c-1211d740e411"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -121,11 +130,22 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""e15243a8-a988-4b94-8a3c-45590ab5219a"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Block"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""26e075db-d4c2-47e1-9420-8d2cf908df7a"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Back"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -175,6 +195,15 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""name"": ""Block"",
                     ""type"": ""Button"",
                     ""id"": ""ffbd9bf6-9a8f-4470-8d11-f54746988ddd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Back"",
+                    ""type"": ""Button"",
+                    ""id"": ""1e643957-9952-497a-94fc-e00d31fecc31"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -251,7 +280,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""e8e10e8c-3c2a-488b-bbfb-5d1eadae4c89"",
-                    ""path"": ""<Keyboard>/r"",
+                    ""path"": ""<Keyboard>/j"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -262,7 +291,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f472cd52-eb25-48f3-af12-3cf4799500fd"",
-                    ""path"": ""<Keyboard>/f"",
+                    ""path"": ""<Keyboard>/k"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -273,11 +302,22 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b1b0a714-4c22-4c8b-b012-591a4bbb2275"",
-                    ""path"": ""<Keyboard>/c"",
+                    ""path"": ""<Keyboard>/i"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Block"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""da0d4beb-5d06-4319-8084-8ec5d54a7699"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Back"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -331,13 +371,22 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Back"",
+                    ""type"": ""Button"",
+                    ""id"": ""6fbeae02-ba25-42c1-b7d5-69eadebfd55e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
                     ""id"": ""fb012202-168c-48ee-b797-6a6cf9424f18"",
-                    ""path"": ""<HID::PC Game Controller       >/button3"",
+                    ""path"": ""<HID::PC Game Controller       >/button4"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -348,7 +397,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""124a0b1f-ee30-43e8-9fab-42e2d1333120"",
-                    ""path"": ""<HID::PC Game Controller       >/button2"",
+                    ""path"": ""<HID::PC Game Controller       >/button3"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -370,7 +419,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""661dde19-ae37-417f-be84-2be90bc5f79c"",
-                    ""path"": ""<HID::PC Game Controller       >/button4"",
+                    ""path"": ""<HID::PC Game Controller       >/button2"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -381,11 +430,22 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""673771f7-f928-446a-9634-b830916f9418"",
-                    ""path"": ""<Joystick>/trigger"",
+                    ""path"": ""<HID::PC Game Controller       >/button5"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Block"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9941be5c-246d-49c9-9994-7a1f2c5e197f"",
+                    ""path"": ""<HID::PC Game Controller       >/button12"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Back"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -435,6 +495,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         m_GamePad_Attack = m_GamePad.FindAction("Attack", throwIfNotFound: true);
         m_GamePad_Kick = m_GamePad.FindAction("Kick", throwIfNotFound: true);
         m_GamePad_Block = m_GamePad.FindAction("Block", throwIfNotFound: true);
+        m_GamePad_Back = m_GamePad.FindAction("Back", throwIfNotFound: true);
         // KeyBoard
         m_KeyBoard = asset.FindActionMap("KeyBoard", throwIfNotFound: true);
         m_KeyBoard_Move = m_KeyBoard.FindAction("Move", throwIfNotFound: true);
@@ -442,6 +503,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         m_KeyBoard_Jump = m_KeyBoard.FindAction("Jump", throwIfNotFound: true);
         m_KeyBoard_Kick = m_KeyBoard.FindAction("Kick", throwIfNotFound: true);
         m_KeyBoard_Block = m_KeyBoard.FindAction("Block", throwIfNotFound: true);
+        m_KeyBoard_Back = m_KeyBoard.FindAction("Back", throwIfNotFound: true);
         // JoyStick
         m_JoyStick = asset.FindActionMap("JoyStick", throwIfNotFound: true);
         m_JoyStick_Attack = m_JoyStick.FindAction("Attack", throwIfNotFound: true);
@@ -449,6 +511,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         m_JoyStick_Jump = m_JoyStick.FindAction("Jump", throwIfNotFound: true);
         m_JoyStick_Kick = m_JoyStick.FindAction("Kick", throwIfNotFound: true);
         m_JoyStick_Block = m_JoyStick.FindAction("Block", throwIfNotFound: true);
+        m_JoyStick_Back = m_JoyStick.FindAction("Back", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -513,6 +576,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
     private readonly InputAction m_GamePad_Attack;
     private readonly InputAction m_GamePad_Kick;
     private readonly InputAction m_GamePad_Block;
+    private readonly InputAction m_GamePad_Back;
     public struct GamePadActions
     {
         private @PlayerController m_Wrapper;
@@ -522,6 +586,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         public InputAction @Attack => m_Wrapper.m_GamePad_Attack;
         public InputAction @Kick => m_Wrapper.m_GamePad_Kick;
         public InputAction @Block => m_Wrapper.m_GamePad_Block;
+        public InputAction @Back => m_Wrapper.m_GamePad_Back;
         public InputActionMap Get() { return m_Wrapper.m_GamePad; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -546,6 +611,9 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @Block.started -= m_Wrapper.m_GamePadActionsCallbackInterface.OnBlock;
                 @Block.performed -= m_Wrapper.m_GamePadActionsCallbackInterface.OnBlock;
                 @Block.canceled -= m_Wrapper.m_GamePadActionsCallbackInterface.OnBlock;
+                @Back.started -= m_Wrapper.m_GamePadActionsCallbackInterface.OnBack;
+                @Back.performed -= m_Wrapper.m_GamePadActionsCallbackInterface.OnBack;
+                @Back.canceled -= m_Wrapper.m_GamePadActionsCallbackInterface.OnBack;
             }
             m_Wrapper.m_GamePadActionsCallbackInterface = instance;
             if (instance != null)
@@ -565,6 +633,9 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @Block.started += instance.OnBlock;
                 @Block.performed += instance.OnBlock;
                 @Block.canceled += instance.OnBlock;
+                @Back.started += instance.OnBack;
+                @Back.performed += instance.OnBack;
+                @Back.canceled += instance.OnBack;
             }
         }
     }
@@ -578,6 +649,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
     private readonly InputAction m_KeyBoard_Jump;
     private readonly InputAction m_KeyBoard_Kick;
     private readonly InputAction m_KeyBoard_Block;
+    private readonly InputAction m_KeyBoard_Back;
     public struct KeyBoardActions
     {
         private @PlayerController m_Wrapper;
@@ -587,6 +659,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_KeyBoard_Jump;
         public InputAction @Kick => m_Wrapper.m_KeyBoard_Kick;
         public InputAction @Block => m_Wrapper.m_KeyBoard_Block;
+        public InputAction @Back => m_Wrapper.m_KeyBoard_Back;
         public InputActionMap Get() { return m_Wrapper.m_KeyBoard; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -611,6 +684,9 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @Block.started -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnBlock;
                 @Block.performed -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnBlock;
                 @Block.canceled -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnBlock;
+                @Back.started -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnBack;
+                @Back.performed -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnBack;
+                @Back.canceled -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnBack;
             }
             m_Wrapper.m_KeyBoardActionsCallbackInterface = instance;
             if (instance != null)
@@ -630,6 +706,9 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @Block.started += instance.OnBlock;
                 @Block.performed += instance.OnBlock;
                 @Block.canceled += instance.OnBlock;
+                @Back.started += instance.OnBack;
+                @Back.performed += instance.OnBack;
+                @Back.canceled += instance.OnBack;
             }
         }
     }
@@ -643,6 +722,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
     private readonly InputAction m_JoyStick_Jump;
     private readonly InputAction m_JoyStick_Kick;
     private readonly InputAction m_JoyStick_Block;
+    private readonly InputAction m_JoyStick_Back;
     public struct JoyStickActions
     {
         private @PlayerController m_Wrapper;
@@ -652,6 +732,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_JoyStick_Jump;
         public InputAction @Kick => m_Wrapper.m_JoyStick_Kick;
         public InputAction @Block => m_Wrapper.m_JoyStick_Block;
+        public InputAction @Back => m_Wrapper.m_JoyStick_Back;
         public InputActionMap Get() { return m_Wrapper.m_JoyStick; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -676,6 +757,9 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @Block.started -= m_Wrapper.m_JoyStickActionsCallbackInterface.OnBlock;
                 @Block.performed -= m_Wrapper.m_JoyStickActionsCallbackInterface.OnBlock;
                 @Block.canceled -= m_Wrapper.m_JoyStickActionsCallbackInterface.OnBlock;
+                @Back.started -= m_Wrapper.m_JoyStickActionsCallbackInterface.OnBack;
+                @Back.performed -= m_Wrapper.m_JoyStickActionsCallbackInterface.OnBack;
+                @Back.canceled -= m_Wrapper.m_JoyStickActionsCallbackInterface.OnBack;
             }
             m_Wrapper.m_JoyStickActionsCallbackInterface = instance;
             if (instance != null)
@@ -695,6 +779,9 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @Block.started += instance.OnBlock;
                 @Block.performed += instance.OnBlock;
                 @Block.canceled += instance.OnBlock;
+                @Back.started += instance.OnBack;
+                @Back.performed += instance.OnBack;
+                @Back.canceled += instance.OnBack;
             }
         }
     }
@@ -733,6 +820,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnKick(InputAction.CallbackContext context);
         void OnBlock(InputAction.CallbackContext context);
+        void OnBack(InputAction.CallbackContext context);
     }
     public interface IKeyBoardActions
     {
@@ -741,6 +829,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnKick(InputAction.CallbackContext context);
         void OnBlock(InputAction.CallbackContext context);
+        void OnBack(InputAction.CallbackContext context);
     }
     public interface IJoyStickActions
     {
@@ -749,5 +838,6 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnKick(InputAction.CallbackContext context);
         void OnBlock(InputAction.CallbackContext context);
+        void OnBack(InputAction.CallbackContext context);
     }
 }

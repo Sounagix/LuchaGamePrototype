@@ -12,12 +12,6 @@ public enum DISPOSITIVE : int
 
 public class PeripheralsFinder : MonoBehaviour
 {
-    [SerializeField]
-    private PlayerInput player1;
-
-    [SerializeField]
-    private PlayerInput player2;
-
     private bool[] dispositiveUsed;
 
     public static PeripheralsFinder instance;

@@ -50,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (onGround)
         {
+            sounds.PlaySound(SOUND.JUMP);
             animator.SetTrigger("Jump");
         }
     }
@@ -78,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
             }
             if (name == "Player2")
             {
-                print(rb.velocity);
+                
             }
             animator.SetFloat("Vertical", xValue);
             animator.SetFloat("Horizontal", yValue);

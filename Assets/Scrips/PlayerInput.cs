@@ -32,6 +32,7 @@ public class PlayerInput : MonoBehaviour
                 inputActions.KeyBoard.Jump.performed -= Jump;
                 inputActions.KeyBoard.Block.performed -= BlockPlayer;
                 inputActions.KeyBoard.Block.canceled -= EndBlock;
+                inputActions.KeyBoard.Back.performed -= Back;
                 inputActions.KeyBoard.Disable();
                 break;
             case DISPOSITIVE.GAMEPAD:
@@ -40,6 +41,7 @@ public class PlayerInput : MonoBehaviour
                 inputActions.GamePad.Block.canceled -= EndBlock;
                 inputActions.GamePad.Kick.performed -= KickPlayer;
                 inputActions.GamePad.Jump.performed -= Jump;
+                inputActions.GamePad.Back.performed -= Back;
                 inputActions.GamePad.Disable();
                 break;
             case DISPOSITIVE.JOYSTICK:
@@ -48,6 +50,7 @@ public class PlayerInput : MonoBehaviour
                 inputActions.JoyStick.Block.canceled -= EndBlock;
                 inputActions.JoyStick.Kick.performed -= KickPlayer;
                 inputActions.JoyStick.Jump.performed -= Jump;
+                inputActions.JoyStick.Back.performed -= Back;
                 inputActions.JoyStick.Disable();
                 break;
             case DISPOSITIVE.NULL:
@@ -106,6 +109,7 @@ public class PlayerInput : MonoBehaviour
                     inputActions.KeyBoard.Block.performed += BlockPlayer;
                     inputActions.KeyBoard.Kick.performed += KickPlayer;
                     inputActions.KeyBoard.Jump.performed += Jump;
+                    inputActions.KeyBoard.Back.performed += Back;
                     break;
                 case DISPOSITIVE.GAMEPAD:
                     inputActions.GamePad.Enable();
@@ -115,6 +119,7 @@ public class PlayerInput : MonoBehaviour
                     inputActions.GamePad.Block.performed += BlockPlayer;
                     inputActions.GamePad.Block.canceled += EndBlock;
                     inputActions.GamePad.Jump.performed += Jump;
+                    inputActions.GamePad.Back.performed += Back;
                     break;
                 case DISPOSITIVE.JOYSTICK:
                     inputActions.JoyStick.Enable();
@@ -124,6 +129,7 @@ public class PlayerInput : MonoBehaviour
                     inputActions.JoyStick.Block.canceled += EndBlock;
                     inputActions.JoyStick.Block.performed += BlockPlayer;
                     inputActions.JoyStick.Jump.performed += Jump;
+                    inputActions.JoyStick.Back.performed += Back;
                     break;
                 case DISPOSITIVE.NULL:
                     break;
@@ -135,6 +141,11 @@ public class PlayerInput : MonoBehaviour
             Debug.LogError("Dipositivo null");
             return false;
         }
+    }
+
+    private void Back(InputAction.CallbackContext context)
+    {
+        GameManager.instance.LoadScene(0);
     }
 
     private void FixedUpdate()

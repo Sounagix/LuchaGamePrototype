@@ -24,7 +24,7 @@ public class PlayerAnims : MonoBehaviour
 
     public void AttackAnimEvent()
     {
-        sounds.PlaySound(SOUND.ATTACK);
+        sounds.PlaySound(SOUND.PUNCH);
         playerAttack.Attack();
     }
 

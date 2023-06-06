@@ -6,7 +6,7 @@ using UnityEngine;
 public enum SOUND : int
 {
     NULL,
-    HIT, ATTACK, DIE, STEP,
+    HIT, PUNCH,KICK, DIE, STEP, JUMP
 }
 
 public class Sounds : MonoBehaviour
@@ -15,13 +15,19 @@ public class Sounds : MonoBehaviour
     private AudioClip hit;
 
     [SerializeField]
-    private AudioClip attack;
+    private AudioClip punchSound;
+
+    [SerializeField]
+    private AudioClip kickSound;
 
     [SerializeField]
     private AudioClip die;
 
     [SerializeField]
     private AudioClip step;
+
+    [SerializeField]
+    private AudioClip jumpSound;
 
     private AudioSource audioSource;
 
@@ -42,9 +48,13 @@ public class Sounds : MonoBehaviour
                 cURRENT_SOUND = SOUND.HIT;
                 audioSource.clip = hit;
                 break;
-            case SOUND.ATTACK:
-                cURRENT_SOUND = SOUND.ATTACK;
-                audioSource.clip = attack;
+            case SOUND.PUNCH:
+                cURRENT_SOUND = SOUND.PUNCH;
+                audioSource.clip = punchSound;
+                break;
+            case SOUND.KICK:
+                cURRENT_SOUND = SOUND.KICK;
+                audioSource.clip = kickSound;
                 break;
             case SOUND.DIE:
                 cURRENT_SOUND = SOUND.DIE;
@@ -53,6 +63,10 @@ public class Sounds : MonoBehaviour
             case SOUND.STEP:
                 cURRENT_SOUND = SOUND.STEP;
                 audioSource.clip = step;
+                break;
+            case SOUND.JUMP:
+                cURRENT_SOUND = SOUND.JUMP;
+                audioSource.clip = jumpSound;
                 break;
         }
         audioSource.Play();

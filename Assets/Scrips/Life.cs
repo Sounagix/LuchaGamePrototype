@@ -17,16 +17,23 @@ public class Life : MonoBehaviour
     [SerializeField]
     private AudioClip koSound;
 
+    [SerializeField]
+    private Color tint;
+
     private float currLife;
 
     private bool isDeath = false;
 
     private Sounds sounds;
 
+    private SkinnedMeshRenderer spriteRenderer;
+
+
 
     private void Awake()
     {
         sounds = GetComponent<Sounds>();
+        spriteRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
     }
 
     private void Start()
@@ -40,6 +47,8 @@ public class Life : MonoBehaviour
     {
         if (!animator.GetBool("Block"))
         {
+            spriteRenderer.material.color = tint;
+            Invoke(nameof(BackFromTint), 0.25f);
             sounds.PlaySound(SOUND.HIT);
             animator.SetTrigger("Hit");
             currLife -= amout;
@@ -71,5 +80,10 @@ public class Life : MonoBehaviour
     public float GetCurrentLife()
     {
         return currLife;
+    }
+
+    private void BackFromTint()
+    {
+        spriteRenderer.material.color = Color.white;
     }
 }

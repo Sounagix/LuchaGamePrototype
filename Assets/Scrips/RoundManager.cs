@@ -14,7 +14,9 @@ public static class KoActions
 {
     public static Action Ko;
 }
-
+/// <summary>
+/// El roundManager se enga ..... ->
+/// </summary>
 public class RoundManager : MonoBehaviour
 {
     [SerializeField]
@@ -67,6 +69,18 @@ public class RoundManager : MonoBehaviour
 
     private Image spriteRenderer;
 
+    [SerializeField]
+    private GameObject guantesRojos;
+
+    [SerializeField]
+    private GameObject guantesAzules;
+
+    [SerializeField]
+    private Sprite guanteRojoWin;
+
+    [SerializeField]
+    private Sprite guanteAzulWin;
+
 
     private void Awake()
     {
@@ -101,6 +115,7 @@ public class RoundManager : MonoBehaviour
             default:
                 break;
         }
+        RenderGloves();
     }
 
     private void OnTimeUp()
@@ -126,25 +141,36 @@ public class RoundManager : MonoBehaviour
     {
         float player1CurrentLife = player1Life.GetCurrentLife();
         float player2CurrentLife = player2Life.GetCurrentLife();
+
         if (player1CurrentLife > player2CurrentLife)
         {
+           // guantesRojos.transform.GetChild(GameManager.instance.player1RoundWinned).GetComponent<Image>().sprite = guanteRojoWin;
             GameManager.instance.player1RoundWinned++;
-
         }
         else if (player1CurrentLife < player2CurrentLife)
         {
+            //guantesRojos.transform.GetChild(GameManager.instance.player2RoundWinned).GetComponent<Image>().sprite = guanteAzulWin;
             GameManager.instance.player2RoundWinned++;
         }
         else
         {
+            //guantesRojos.transform.GetChild(GameManager.instance.player1RoundWinned).GetComponent<Image>().sprite = guanteRojoWin;
+            //
+            //guantesRojos.transform.GetChild(GameManager.instance.player2RoundWinned).GetComponent<Image>().sprite = guanteAzulWin;
             GameManager.instance.player1RoundWinned++;
             GameManager.instance.player2RoundWinned++;
         }
+
+        RenderGloves();
     }
 
     private void ManageRounds()
     {
-        if (GameManager.instance.player1RoundWinned > 1)
+        if (GameManager.instance.player1RoundWinned == GameManager.instance.player2RoundWinned && GameManager.instance.player1RoundWinned > 1)
+        {
+            ShowPlayerWinPanel(GAME_STATE.TIE);
+        }
+        else if (GameManager.instance.player1RoundWinned > 1)
         {
             ShowPlayerWinPanel(GAME_STATE.PLAYER1WIN);
         }
@@ -156,6 +182,27 @@ public class RoundManager : MonoBehaviour
         {
             GameManager.instance.currentRound++;
             StartCoroutine(Wait());
+        }
+    }
+
+    private void RenderGloves()
+    {
+        if (GameManager.instance.player1RoundWinned > 0)
+        {
+            for (int i = 0; i < GameManager.instance.player1RoundWinned; i++)
+            {
+                guantesRojos.transform.GetChild(i).GetComponent<Image>().sprite = guanteRojoWin;
+
+            }
+        }
+
+        if (GameManager.instance.player2RoundWinned > 0)
+        {
+            for (int i = 0; i < GameManager.instance.player2RoundWinned; i++)
+            {
+                guantesAzules.transform.GetChild(i).GetComponent<Image>().sprite = guanteAzulWin;
+
+            }
         }
     }
 
@@ -172,15 +219,20 @@ public class RoundManager : MonoBehaviour
         {
             case GAME_STATE.PLAYER1WIN:
                 spriteRenderer.sprite = player1WinSprite;
+                retryButton.SetActive(true);
                 break;
             case GAME_STATE.PLAYER2WIN:
                 spriteRenderer.sprite = player2WinSprite;
+                retryButton.SetActive(true);
                 break;
             case GAME_STATE.TIE:
                 spriteRenderer.sprite = tieSprite;
+                if(GameManager.instance.player1RoundWinned > 1)
+                {
+                    retryButton.SetActive(true);
+                }
                 break;
         }
-        retryButton.SetActive(true);
+        
     }
-
 }
