@@ -28,16 +28,25 @@ public class PlayerInput : MonoBehaviour
         {
             case DISPOSITIVE.KEYBOARD:
                 inputActions.KeyBoard.Attack.performed -= AttackPlayer;
+                inputActions.KeyBoard.Kick.performed -= KickPlayer;
                 inputActions.KeyBoard.Jump.performed -= Jump;
+                inputActions.KeyBoard.Block.performed -= BlockPlayer;
+                inputActions.KeyBoard.Block.canceled -= EndBlock;
                 inputActions.KeyBoard.Disable();
                 break;
             case DISPOSITIVE.GAMEPAD:
                 inputActions.GamePad.Attack.performed -= AttackPlayer;
+                inputActions.GamePad.Block.performed -= BlockPlayer;
+                inputActions.GamePad.Block.canceled -= EndBlock;
+                inputActions.GamePad.Kick.performed -= KickPlayer;
                 inputActions.GamePad.Jump.performed -= Jump;
                 inputActions.GamePad.Disable();
                 break;
             case DISPOSITIVE.JOYSTICK:
                 inputActions.JoyStick.Attack.performed -= AttackPlayer;
+                inputActions.JoyStick.Block.performed -= BlockPlayer;
+                inputActions.JoyStick.Block.canceled -= EndBlock;
+                inputActions.JoyStick.Kick.performed -= KickPlayer;
                 inputActions.JoyStick.Jump.performed -= Jump;
                 inputActions.JoyStick.Disable();
                 break;
@@ -94,18 +103,26 @@ public class PlayerInput : MonoBehaviour
                     inputActions.KeyBoard.Enable();
                     moveActions = inputActions.KeyBoard.Move;
                     inputActions.KeyBoard.Attack.performed += AttackPlayer;
+                    inputActions.KeyBoard.Block.performed += BlockPlayer;
+                    inputActions.KeyBoard.Kick.performed += KickPlayer;
                     inputActions.KeyBoard.Jump.performed += Jump;
                     break;
                 case DISPOSITIVE.GAMEPAD:
                     inputActions.GamePad.Enable();
                     moveActions = inputActions.GamePad.Move;
                     inputActions.GamePad.Attack.performed += AttackPlayer;
+                    inputActions.GamePad.Kick.performed += KickPlayer;
+                    inputActions.GamePad.Block.performed += BlockPlayer;
+                    inputActions.GamePad.Block.canceled += EndBlock;
                     inputActions.GamePad.Jump.performed += Jump;
                     break;
                 case DISPOSITIVE.JOYSTICK:
                     inputActions.JoyStick.Enable();
                     moveActions = inputActions.JoyStick.Move;
                     inputActions.JoyStick.Attack.performed += AttackPlayer;
+                    inputActions.JoyStick.Kick.performed += KickPlayer;
+                    inputActions.JoyStick.Block.canceled += EndBlock;
+                    inputActions.JoyStick.Block.performed += BlockPlayer;
                     inputActions.JoyStick.Jump.performed += Jump;
                     break;
                 case DISPOSITIVE.NULL:
@@ -136,9 +153,33 @@ public class PlayerInput : MonoBehaviour
             playerAttack.AttackAnim();
     }
 
+    private void KickPlayer(InputAction.CallbackContext context)
+    {
+        if (!life.IsDeath())
+        {
+            playerAttack.KickAnim();
+        }
+    }
+
+    private void BlockPlayer(InputAction.CallbackContext context)
+    {
+        if (!life.IsDeath())
+        {
+            playerAttack.InitBlock();
+        }
+    }
+
+    private void EndBlock(InputAction.CallbackContext context)
+    {
+        if (!life.IsDeath())
+        {
+            playerAttack.EndBlock();
+        }
+    }
+
     private void Jump(InputAction.CallbackContext context)
     {
         if (!life.IsDeath())
-            playerMovement.PlayerJump();
+            playerMovement.InitJumpAnimEvent();
     }
 }

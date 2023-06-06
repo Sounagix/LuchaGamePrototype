@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,9 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+    private bool isBlocking = false;
+
+    private bool attacking = false;
 
     public void Attack()
     {
@@ -31,8 +35,7 @@ public class PlayerAttack : MonoBehaviour
         {
             if (hit.collider.CompareTag(enemyTag) && !hit.collider.GetComponent<Life>().IsDeath())
             {
-                Debug.DrawLine(transform.position, hit.point, Color.red, 1.0f);
-                
+                Debug.DrawLine(transform.position, hit.point, Color.red, 1.0f);                
                 bool killer = hit.collider.GetComponent<Life>().DamageLife(damage);
                 if (killer)
                 {
@@ -44,6 +47,42 @@ public class PlayerAttack : MonoBehaviour
 
     public void AttackAnim()
     {
-        animator.SetTrigger("Attack");
+        if (!attacking)
+        {
+            attacking = true;
+            animator.SetTrigger("Attack");
+        }
+    }
+
+    public void KickAnim()
+    {
+        if (!attacking)
+        {
+            attacking = true;
+            animator.SetTrigger("Kick");
+        }
+    }
+
+    public void EndAttackAnim()
+    {
+        attacking = false;
+    }
+
+    public void InitBlock()
+    {
+        isBlocking = true;
+        animator.SetBool("Block", true);
+    }
+
+    public void EndBlock()
+    {
+        isBlocking = false;
+        animator.SetFloat("BlockSpeed", 1.0f);
+        animator.SetBool("Block", false);
+    }
+
+    public bool IsPlayerBlocking()
+    {
+        return isBlocking;
     }
 }

@@ -15,9 +15,6 @@ public class Life : MonoBehaviour
     private Animator animator;
 
     [SerializeField]
-    private GameObject koPanel;
-
-    [SerializeField]
     private AudioClip koSound;
 
     private float currLife;
@@ -26,11 +23,11 @@ public class Life : MonoBehaviour
 
     private Sounds sounds;
 
+
     private void Awake()
     {
         sounds = GetComponent<Sounds>();
     }
-
 
     private void Start()
     {
@@ -38,32 +35,41 @@ public class Life : MonoBehaviour
         scrollbar.size = 1.0f;
     }
 
+
     public bool DamageLife(float amout)
     {
-        sounds.PlaySound(SOUND.HIT);
-        animator.SetTrigger("Hit");
-        currLife -= amout;
-        scrollbar.size = currLife / maxLife;
-        isDeath = currLife <= 0.0f;
-        if (isDeath)
+        if (!animator.GetBool("Block"))
         {
-            sounds.PlaySound(SOUND.DIE);
-            animator.SetTrigger("Die");
-            GetComponent<Rigidbody>().isKinematic = true;
-            GetComponent<Collider>().enabled = false;
-            koPanel.SetActive(true);
-            var audioSource = Camera.main.GetComponent<AudioSource>();
-            audioSource.clip = koSound;
-            audioSource.loop = false;
-            audioSource.volume = 1.0f;
-            audioSource.Play();
-            return true;
+            sounds.PlaySound(SOUND.HIT);
+            animator.SetTrigger("Hit");
+            currLife -= amout;
+            scrollbar.size = currLife / maxLife;
+            isDeath = currLife <= 0.0f;
+            if (isDeath)
+            {
+                sounds.PlaySound(SOUND.DIE);
+                animator.SetTrigger("Die");
+                GetComponent<Rigidbody>().isKinematic = true;
+                GetComponent<Collider>().enabled = false;
+                KoActions.Ko();
+                return true;
+            }
+            else return false;
         }
-        else return false;
+        else
+        {
+            return false;
+        }
+
     }
 
     public bool IsDeath()
     {
         return isDeath;
+    }
+
+    public float GetCurrentLife()
+    {
+        return currLife;
     }
 }

@@ -53,6 +53,24 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Kick"",
+                    ""type"": ""Button"",
+                    ""id"": ""1cabb8bb-fce7-4013-b8bd-c4adac9b80e6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Block"",
+                    ""type"": ""Button"",
+                    ""id"": ""1c9e94ac-11f9-443f-82ac-6534f3778ab6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -88,6 +106,28 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""db1eedd4-77c9-49fe-ab0c-1211d740e411"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Kick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e15243a8-a988-4b94-8a3c-45590ab5219a"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Block"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -117,6 +157,24 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""name"": ""Jump"",
                     ""type"": ""Button"",
                     ""id"": ""15d52f12-8d98-4254-878a-9f30d3b8aa82"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Kick"",
+                    ""type"": ""Button"",
+                    ""id"": ""85cf3d2b-b42d-41fb-bec4-6ba5f6e88358"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Block"",
+                    ""type"": ""Button"",
+                    ""id"": ""ffbd9bf6-9a8f-4470-8d11-f54746988ddd"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -200,6 +258,28 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f472cd52-eb25-48f3-af12-3cf4799500fd"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Kick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b1b0a714-4c22-4c8b-b012-591a4bbb2275"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Block"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -229,6 +309,24 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""name"": ""Jump"",
                     ""type"": ""Button"",
                     ""id"": ""d390f37a-6386-48f9-9652-e89ebfd11f5f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Kick"",
+                    ""type"": ""Button"",
+                    ""id"": ""8fafb0fd-016b-41c6-b499-892702378a79"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Block"",
+                    ""type"": ""Button"",
+                    ""id"": ""bf78acf9-dc73-45d2-8105-9c75516d8eb9"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -266,6 +364,28 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""PcGamePad"",
                     ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""661dde19-ae37-417f-be84-2be90bc5f79c"",
+                    ""path"": ""<HID::PC Game Controller       >/button4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Kick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""673771f7-f928-446a-9634-b830916f9418"",
+                    ""path"": ""<Joystick>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Block"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -313,16 +433,22 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         m_GamePad_Move = m_GamePad.FindAction("Move", throwIfNotFound: true);
         m_GamePad_Jump = m_GamePad.FindAction("Jump", throwIfNotFound: true);
         m_GamePad_Attack = m_GamePad.FindAction("Attack", throwIfNotFound: true);
+        m_GamePad_Kick = m_GamePad.FindAction("Kick", throwIfNotFound: true);
+        m_GamePad_Block = m_GamePad.FindAction("Block", throwIfNotFound: true);
         // KeyBoard
         m_KeyBoard = asset.FindActionMap("KeyBoard", throwIfNotFound: true);
         m_KeyBoard_Move = m_KeyBoard.FindAction("Move", throwIfNotFound: true);
         m_KeyBoard_Attack = m_KeyBoard.FindAction("Attack", throwIfNotFound: true);
         m_KeyBoard_Jump = m_KeyBoard.FindAction("Jump", throwIfNotFound: true);
+        m_KeyBoard_Kick = m_KeyBoard.FindAction("Kick", throwIfNotFound: true);
+        m_KeyBoard_Block = m_KeyBoard.FindAction("Block", throwIfNotFound: true);
         // JoyStick
         m_JoyStick = asset.FindActionMap("JoyStick", throwIfNotFound: true);
         m_JoyStick_Attack = m_JoyStick.FindAction("Attack", throwIfNotFound: true);
         m_JoyStick_Move = m_JoyStick.FindAction("Move", throwIfNotFound: true);
         m_JoyStick_Jump = m_JoyStick.FindAction("Jump", throwIfNotFound: true);
+        m_JoyStick_Kick = m_JoyStick.FindAction("Kick", throwIfNotFound: true);
+        m_JoyStick_Block = m_JoyStick.FindAction("Block", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -385,6 +511,8 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
     private readonly InputAction m_GamePad_Move;
     private readonly InputAction m_GamePad_Jump;
     private readonly InputAction m_GamePad_Attack;
+    private readonly InputAction m_GamePad_Kick;
+    private readonly InputAction m_GamePad_Block;
     public struct GamePadActions
     {
         private @PlayerController m_Wrapper;
@@ -392,6 +520,8 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_GamePad_Move;
         public InputAction @Jump => m_Wrapper.m_GamePad_Jump;
         public InputAction @Attack => m_Wrapper.m_GamePad_Attack;
+        public InputAction @Kick => m_Wrapper.m_GamePad_Kick;
+        public InputAction @Block => m_Wrapper.m_GamePad_Block;
         public InputActionMap Get() { return m_Wrapper.m_GamePad; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -410,6 +540,12 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @Attack.started -= m_Wrapper.m_GamePadActionsCallbackInterface.OnAttack;
                 @Attack.performed -= m_Wrapper.m_GamePadActionsCallbackInterface.OnAttack;
                 @Attack.canceled -= m_Wrapper.m_GamePadActionsCallbackInterface.OnAttack;
+                @Kick.started -= m_Wrapper.m_GamePadActionsCallbackInterface.OnKick;
+                @Kick.performed -= m_Wrapper.m_GamePadActionsCallbackInterface.OnKick;
+                @Kick.canceled -= m_Wrapper.m_GamePadActionsCallbackInterface.OnKick;
+                @Block.started -= m_Wrapper.m_GamePadActionsCallbackInterface.OnBlock;
+                @Block.performed -= m_Wrapper.m_GamePadActionsCallbackInterface.OnBlock;
+                @Block.canceled -= m_Wrapper.m_GamePadActionsCallbackInterface.OnBlock;
             }
             m_Wrapper.m_GamePadActionsCallbackInterface = instance;
             if (instance != null)
@@ -423,6 +559,12 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @Attack.started += instance.OnAttack;
                 @Attack.performed += instance.OnAttack;
                 @Attack.canceled += instance.OnAttack;
+                @Kick.started += instance.OnKick;
+                @Kick.performed += instance.OnKick;
+                @Kick.canceled += instance.OnKick;
+                @Block.started += instance.OnBlock;
+                @Block.performed += instance.OnBlock;
+                @Block.canceled += instance.OnBlock;
             }
         }
     }
@@ -434,6 +576,8 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
     private readonly InputAction m_KeyBoard_Move;
     private readonly InputAction m_KeyBoard_Attack;
     private readonly InputAction m_KeyBoard_Jump;
+    private readonly InputAction m_KeyBoard_Kick;
+    private readonly InputAction m_KeyBoard_Block;
     public struct KeyBoardActions
     {
         private @PlayerController m_Wrapper;
@@ -441,6 +585,8 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_KeyBoard_Move;
         public InputAction @Attack => m_Wrapper.m_KeyBoard_Attack;
         public InputAction @Jump => m_Wrapper.m_KeyBoard_Jump;
+        public InputAction @Kick => m_Wrapper.m_KeyBoard_Kick;
+        public InputAction @Block => m_Wrapper.m_KeyBoard_Block;
         public InputActionMap Get() { return m_Wrapper.m_KeyBoard; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -459,6 +605,12 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @Jump.started -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnJump;
+                @Kick.started -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnKick;
+                @Kick.performed -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnKick;
+                @Kick.canceled -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnKick;
+                @Block.started -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnBlock;
+                @Block.performed -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnBlock;
+                @Block.canceled -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnBlock;
             }
             m_Wrapper.m_KeyBoardActionsCallbackInterface = instance;
             if (instance != null)
@@ -472,6 +624,12 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @Kick.started += instance.OnKick;
+                @Kick.performed += instance.OnKick;
+                @Kick.canceled += instance.OnKick;
+                @Block.started += instance.OnBlock;
+                @Block.performed += instance.OnBlock;
+                @Block.canceled += instance.OnBlock;
             }
         }
     }
@@ -483,6 +641,8 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
     private readonly InputAction m_JoyStick_Attack;
     private readonly InputAction m_JoyStick_Move;
     private readonly InputAction m_JoyStick_Jump;
+    private readonly InputAction m_JoyStick_Kick;
+    private readonly InputAction m_JoyStick_Block;
     public struct JoyStickActions
     {
         private @PlayerController m_Wrapper;
@@ -490,6 +650,8 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         public InputAction @Attack => m_Wrapper.m_JoyStick_Attack;
         public InputAction @Move => m_Wrapper.m_JoyStick_Move;
         public InputAction @Jump => m_Wrapper.m_JoyStick_Jump;
+        public InputAction @Kick => m_Wrapper.m_JoyStick_Kick;
+        public InputAction @Block => m_Wrapper.m_JoyStick_Block;
         public InputActionMap Get() { return m_Wrapper.m_JoyStick; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -508,6 +670,12 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @Jump.started -= m_Wrapper.m_JoyStickActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_JoyStickActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_JoyStickActionsCallbackInterface.OnJump;
+                @Kick.started -= m_Wrapper.m_JoyStickActionsCallbackInterface.OnKick;
+                @Kick.performed -= m_Wrapper.m_JoyStickActionsCallbackInterface.OnKick;
+                @Kick.canceled -= m_Wrapper.m_JoyStickActionsCallbackInterface.OnKick;
+                @Block.started -= m_Wrapper.m_JoyStickActionsCallbackInterface.OnBlock;
+                @Block.performed -= m_Wrapper.m_JoyStickActionsCallbackInterface.OnBlock;
+                @Block.canceled -= m_Wrapper.m_JoyStickActionsCallbackInterface.OnBlock;
             }
             m_Wrapper.m_JoyStickActionsCallbackInterface = instance;
             if (instance != null)
@@ -521,6 +689,12 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @Kick.started += instance.OnKick;
+                @Kick.performed += instance.OnKick;
+                @Kick.canceled += instance.OnKick;
+                @Block.started += instance.OnBlock;
+                @Block.performed += instance.OnBlock;
+                @Block.canceled += instance.OnBlock;
             }
         }
     }
@@ -557,17 +731,23 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
+        void OnKick(InputAction.CallbackContext context);
+        void OnBlock(InputAction.CallbackContext context);
     }
     public interface IKeyBoardActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnKick(InputAction.CallbackContext context);
+        void OnBlock(InputAction.CallbackContext context);
     }
     public interface IJoyStickActions
     {
         void OnAttack(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnKick(InputAction.CallbackContext context);
+        void OnBlock(InputAction.CallbackContext context);
     }
 }
