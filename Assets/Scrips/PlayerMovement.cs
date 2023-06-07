@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     [Min(1.0f)]
-    private float jumpSpeed = 2.0f;
+    private float jumpSpeed = 1.0f;
 
     [SerializeField]
     [Min(1.0f)]
