@@ -4813,7 +4813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb5799c076023f498c42b4fd28f0fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dISPOSITIVE: 2
+  dISPOSITIVE: 1
 --- !u!54 &887845853
 Rigidbody:
   m_ObjectHideFlags: 0

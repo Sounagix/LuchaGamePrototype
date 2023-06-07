@@ -55,6 +55,24 @@ public class PlayerInput : MonoBehaviour
                 break;
             case DISPOSITIVE.NULL:
                 break;
+            case DISPOSITIVE.XBOX:
+                inputActions.GamePad.Attack.performed -= AttackPlayer;
+                inputActions.GamePad.Block.performed -= BlockPlayer;
+                inputActions.GamePad.Block.canceled -= EndBlock;
+                inputActions.GamePad.Kick.performed -= KickPlayer;
+                inputActions.GamePad.Jump.performed -= Jump;
+                inputActions.GamePad.Back.performed -= Back;
+                inputActions.GamePad.Disable();
+                break;
+            case DISPOSITIVE.PS:
+                inputActions.GamePad.Attack.performed -= AttackPlayer;
+                inputActions.GamePad.Block.performed -= BlockPlayer;
+                inputActions.GamePad.Block.canceled -= EndBlock;
+                inputActions.GamePad.Kick.performed -= KickPlayer;
+                inputActions.GamePad.Jump.performed -= Jump;
+                inputActions.GamePad.Back.performed -= Back;
+                inputActions.GamePad.Disable();
+                break;
         }
         moveActions.Disable();
         inputActions.Disable();
@@ -67,40 +85,25 @@ public class PlayerInput : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         playerAttack = GetComponent<PlayerAttack>();
         life = GetComponent<Life>();
-        SetUpDispositive(PeripheralsFinder.instance.GetDevice(dISPOSITIVE));
+        var device = PeripheralsFinder.instance.GetDevice(dISPOSITIVE);
+        if (device.Value.Equals(dISPOSITIVE))
+        {
+            SetUpDispositive(device.Key, device.Value);
+        }
+        else
+        {
+            dISPOSITIVE = DISPOSITIVE.KEYBOARD;
+            var newDevice = PeripheralsFinder.instance.GetDevice(dISPOSITIVE);
+            SetUpDispositive(newDevice.Key, newDevice.Value);
+        }
     }
 
-    public bool SetUpDispositive(InputDevice _inputDevice)
+    public bool SetUpDispositive(InputDevice _inputDevice, DISPOSITIVE _dISPOSITIVE)
     {
         if (inputDevice == null)
         {
-            inputDevice = _inputDevice;
-            InputDeviceDescription deviceDescription = _inputDevice.description;
-
-            if (deviceDescription.deviceClass.Contains("PC") || deviceDescription.product.Contains("PC"))
-            {
-                dISPOSITIVE = DISPOSITIVE.JOYSTICK;
-                print("JoyStick asignado al player 1");
-            }
-            else if (deviceDescription.deviceClass.Contains("Keyboard") || deviceDescription.product.Contains("Keyboard"))
-            {
-                dISPOSITIVE = DISPOSITIVE.KEYBOARD;
-                print("Keyboard asignado al player 1");
-            }
-            else if (deviceDescription.deviceClass.Contains("Gamepad") || deviceDescription.product.Contains("Gamepad"))
-            {
-                dISPOSITIVE = DISPOSITIVE.GAMEPAD;
-                print("Gamepad asignado al player 1");
-            }
-            else
-            {
-                print(deviceDescription.deviceClass + "NO CONTROLADO");
-                dISPOSITIVE = DISPOSITIVE.NULL;
-            }
-
-
             inputActions = new PlayerController();
-            switch (dISPOSITIVE)
+            switch (_dISPOSITIVE)
             {
                 case DISPOSITIVE.KEYBOARD:
                     inputActions.KeyBoard.Enable();
@@ -132,6 +135,28 @@ public class PlayerInput : MonoBehaviour
                     inputActions.JoyStick.Back.performed += Back;
                     break;
                 case DISPOSITIVE.NULL:
+                    break;
+                case DISPOSITIVE.XBOX:
+                    inputActions.GamePad.Enable();
+                    moveActions = inputActions.GamePad.Move;
+                    inputActions.GamePad.Attack.performed += AttackPlayer;
+                    inputActions.GamePad.Kick.performed += KickPlayer;
+                    inputActions.GamePad.Block.performed += BlockPlayer;
+                    inputActions.GamePad.Block.canceled += EndBlock;
+                    inputActions.GamePad.Jump.performed += Jump;
+                    inputActions.GamePad.Back.performed += Back;
+                    break;
+                case DISPOSITIVE.PS:
+                    inputActions.GamePad.Enable();
+                    moveActions = inputActions.GamePad.Move;
+                    inputActions.GamePad.Attack.performed += AttackPlayer;
+                    inputActions.GamePad.Kick.performed += KickPlayer;
+                    inputActions.GamePad.Block.performed += BlockPlayer;
+                    inputActions.GamePad.Block.canceled += EndBlock;
+                    inputActions.GamePad.Jump.performed += Jump;
+                    inputActions.GamePad.Back.performed += Back;
+                    break;
+                default:
                     break;
             }
             return true;

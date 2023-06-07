@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.InputSystem.Layouts;
 
 public enum DISPOSITIVE : int
 {
-    KEYBOARD, GAMEPAD, JOYSTICK, NULL,
+    KEYBOARD, XBOX, PS, JOYSTICK, GAMEPAD ,NULL, 
 }
 
 
@@ -40,7 +40,7 @@ public class PeripheralsFinder : MonoBehaviour
         }
     }
 
-    public InputDevice GetDevice(DISPOSITIVE dISPOSITIVE)
+    public KeyValuePair<InputDevice, DISPOSITIVE> GetDevice(DISPOSITIVE dISPOSITIVE)
     {
         InputDevice[] dispositivos = InputSystem.devices.ToArray();
         bool diviceFinded = false;
@@ -63,8 +63,7 @@ public class PeripheralsFinder : MonoBehaviour
             case DISPOSITIVE.GAMEPAD:
                 do
                 {
-                    if (!dispositiveUsed[index] && dispositivos[index].description.deviceClass.Contains(GetDispositiveName(DISPOSITIVE.GAMEPAD)) ||
-                        dispositivos[index].description.product.Contains(GetDispositiveName(DISPOSITIVE.GAMEPAD)))
+                    if (!dispositiveUsed[index] && DiviceFinded(DISPOSITIVE.GAMEPAD, dispositivos[index]))
                     {
                         diviceFinded = true;
                     }
@@ -86,18 +85,52 @@ public class PeripheralsFinder : MonoBehaviour
                 break;
             case DISPOSITIVE.NULL:
                 break;
+            case DISPOSITIVE.XBOX:
+                do
+                {
+                    if (!dispositiveUsed[index] && DiviceFinded(DISPOSITIVE.XBOX, dispositivos[index]))
+                    {
+                        diviceFinded = true;
+                        dISPOSITIVE = DISPOSITIVE.XBOX;
+                    }
+                    else index++;
+                }
+                while (!diviceFinded && index < numDispositive);
+                break;
+            case DISPOSITIVE.PS:
+                do
+                {
+                    if (!dispositiveUsed[index] && DiviceFinded(DISPOSITIVE.PS, dispositivos[index]))
+                    {
+                        diviceFinded = true;
+                        dISPOSITIVE = DISPOSITIVE.PS;
+                    }
+                    else index++;
+                }
+                while (!diviceFinded && index < numDispositive);
+                break;
         }
 
         if (diviceFinded)
         {
             dispositiveUsed[index] = true;
-            return dispositivos[index];
+            return new KeyValuePair<InputDevice, DISPOSITIVE>(dispositivos[index], dISPOSITIVE);
         }
         else
         {
-            return null;
+            return new KeyValuePair<InputDevice, DISPOSITIVE>(null, DISPOSITIVE.NULL);
         }
 
+    }
+
+    private bool DiviceFinded(DISPOSITIVE _dISPOSITIVE, InputDevice inputDevice)
+    {
+        string descriptionClass = inputDevice.description.deviceClass;
+        string descriptionProduct = inputDevice.description.product;
+        string displayName = inputDevice.displayName;
+        return descriptionClass.Contains(GetDispositiveName(_dISPOSITIVE)) ||
+            descriptionProduct.Contains(GetDispositiveName(_dISPOSITIVE)) ||
+            displayName.Contains(GetDispositiveName(_dISPOSITIVE));
     }
 
 
@@ -123,13 +156,19 @@ public class PeripheralsFinder : MonoBehaviour
                 chain = "Keyboard";
                 break;
             case DISPOSITIVE.GAMEPAD:
-                chain = "Gamepad";
+                chain = "Xbox Controller";
                 break;
             case DISPOSITIVE.JOYSTICK:
                 chain = "PC";
                 break;
             case DISPOSITIVE.NULL:
                 chain = "NULL";
+                break;
+            case DISPOSITIVE.XBOX:
+                chain = "Xbox";
+                break;
+            case DISPOSITIVE.PS:
+                chain = "DualShock";
                 break;
         }
         return chain;

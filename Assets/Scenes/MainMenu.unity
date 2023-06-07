@@ -722,7 +722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2b7f14a0c908a4dbb23d85412ec03c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dISPOSITIVE: 2
+  dISPOSITIVE: 1
   gameButton: {fileID: 1378479381}
   optionsButton: {fileID: 1705896993}
   exitButton: {fileID: 1275381759}

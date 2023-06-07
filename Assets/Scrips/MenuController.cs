@@ -47,6 +47,14 @@ public class MenuController : MonoBehaviour
                 break;
             case DISPOSITIVE.NULL:
                 break;
+            case DISPOSITIVE.XBOX:
+                inputActions.GamePad.Jump.performed -= ClicBoton;
+                inputActions.GamePad.Disable();
+                break;
+            case DISPOSITIVE.PS:
+                inputActions.GamePad.Jump.performed -= ClicBoton;
+                inputActions.GamePad.Disable();
+                break;
         }
         moveActions.Disable();
         inputActions.Disable();
@@ -54,7 +62,17 @@ public class MenuController : MonoBehaviour
 
     private void Start()
     {
-        SetUpDispositive(PeripheralsFinder.instance.GetDevice(dISPOSITIVE));
+        var device = PeripheralsFinder.instance.GetDevice(dISPOSITIVE);
+        if (device.Value.Equals(dISPOSITIVE))
+        {
+            SetUpDispositive(device.Key);
+        }
+        else
+        {
+            dISPOSITIVE = DISPOSITIVE.KEYBOARD;
+            var newDivice = PeripheralsFinder.instance.GetDevice(dISPOSITIVE);
+            SetUpDispositive(device.Key);
+        }
         Showbutton();
     }
 
@@ -152,29 +170,6 @@ public class MenuController : MonoBehaviour
         if (inputDevice == null)
         {
             inputDevice = _inputDevice;
-            InputDeviceDescription deviceDescription = _inputDevice.description;
-
-            if (deviceDescription.deviceClass.Contains("PC") || deviceDescription.product.Contains("PC"))
-            {
-                dISPOSITIVE = DISPOSITIVE.JOYSTICK;
-                print("JoyStick asignado al player 1");
-            }
-            else if (deviceDescription.deviceClass.Contains("Keyboard") || deviceDescription.product.Contains("Keyboard"))
-            {
-                dISPOSITIVE = DISPOSITIVE.KEYBOARD;
-                print("Keyboard asignado al player 1");
-            }
-            else if (deviceDescription.deviceClass.Contains("Gamepad") || deviceDescription.product.Contains("Gamepad"))
-            {
-                dISPOSITIVE = DISPOSITIVE.GAMEPAD;
-                print("Gamepad asignado al player 1");
-            }
-            else
-            {
-                print(deviceDescription.deviceClass + "NO CONTROLADO");
-                dISPOSITIVE = DISPOSITIVE.NULL;
-            }
-
 
             inputActions = new PlayerController();
             switch (dISPOSITIVE)
@@ -195,6 +190,16 @@ public class MenuController : MonoBehaviour
                     inputActions.JoyStick.Jump.performed += ClicBoton;
                     break;
                 case DISPOSITIVE.NULL:
+                    break;
+                case DISPOSITIVE.XBOX:
+                    inputActions.GamePad.Enable();
+                    moveActions = inputActions.GamePad.Move;
+                    inputActions.GamePad.Jump.performed += ClicBoton;
+                    break;
+                case DISPOSITIVE.PS:
+                    inputActions.GamePad.Enable();
+                    moveActions = inputActions.GamePad.Move;
+                    inputActions.GamePad.Jump.performed += ClicBoton;
                     break;
             }
             return true;
