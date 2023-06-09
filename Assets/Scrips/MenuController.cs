@@ -85,7 +85,7 @@ public class MenuController : MonoBehaviour
         int index = 0;
         do
         {
-            var device = PeripheralsFinder.instance.GetDevice(priorityInput[index]);
+            var device = PeripheralsFinder.instance.GetDevice(priorityInput[index], 0);
             dISPOSITIVE = device.Value;
             if (device.Key != null && device.Value.Equals(dISPOSITIVE))
             {
@@ -99,19 +99,6 @@ public class MenuController : MonoBehaviour
 
         }
         while (!deviceFinded && index < priorityInput.Length);
-
-
-        //var device = PeripheralsFinder.instance.GetDevice(dISPOSITIVE);
-        //if (device.Value.Equals(dISPOSITIVE))
-        //{
-        //    SetUpDispositive(device.Key);
-        //}
-        //else
-        //{
-        //    dISPOSITIVE = DISPOSITIVE.KEYBOARD;
-        //    var newDivice = PeripheralsFinder.instance.GetDevice(dISPOSITIVE);
-        //    SetUpDispositive(device.Key);
-        //}
         Showbutton();
     }
 

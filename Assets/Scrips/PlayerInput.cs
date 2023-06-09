@@ -111,7 +111,8 @@ public class PlayerInput : MonoBehaviour
         int index = 0;
         do
         {
-            var device = PeripheralsFinder.instance.GetDevice(priorityInput[index]);
+            int numPlayer = name == "Player1" ? 0 : 1;
+            var device = PeripheralsFinder.instance.GetDevice(priorityInput[index], numPlayer);
             dISPOSITIVE = device.Value;
             if (device.Key != null && device.Value.Equals(dISPOSITIVE))
             {

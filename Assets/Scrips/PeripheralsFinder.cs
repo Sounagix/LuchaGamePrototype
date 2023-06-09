@@ -20,6 +20,8 @@ public class PeripheralsFinder : MonoBehaviour
 
     private bool playerOneShared = true;
 
+    private int numPlayer = 0;
+
     private void OnEnable()
     {
         // Obtener la lista de dispositivos de entrada disponibles
@@ -34,6 +36,7 @@ public class PeripheralsFinder : MonoBehaviour
         if (dispositivos.Length == 2)
         {
             sharedKeyboardActive = true;
+            playerOneShared = true;
         }
 
         //player1.SetUpDispositive(dispositivos[0]);
@@ -49,17 +52,13 @@ public class PeripheralsFinder : MonoBehaviour
         }
     }
 
-    public KeyValuePair<InputDevice, DISPOSITIVE> GetDevice(DISPOSITIVE dISPOSITIVE)
+    public KeyValuePair<InputDevice, DISPOSITIVE> GetDevice(DISPOSITIVE dISPOSITIVE, int player)
     {
 
         InputDevice[] dispositivos = InputSystem.devices.ToArray();
         if (sharedKeyboardActive)
         {
-            DISPOSITIVE dISPOSITIVE_SHARED = playerOneShared ? DISPOSITIVE.SHARED_KEYBOARD_PLAYER1 : DISPOSITIVE.SHARED_KEYBOARD_PLAYER2;
-
-            if (dISPOSITIVE_SHARED.Equals(DISPOSITIVE.SHARED_KEYBOARD_PLAYER2))
-                playerOneShared = true;
-            else playerOneShared = false;
+            DISPOSITIVE dISPOSITIVE_SHARED = player == 0 ? DISPOSITIVE.SHARED_KEYBOARD_PLAYER1 : DISPOSITIVE.SHARED_KEYBOARD_PLAYER2;
             return new KeyValuePair<InputDevice, DISPOSITIVE>(dispositivos[0], dISPOSITIVE_SHARED);
         }
 
