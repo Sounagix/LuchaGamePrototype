@@ -21,6 +21,10 @@ public class PlayerMovement : MonoBehaviour
     private float maxSpeed = 2.0f;
 
     [SerializeField]
+    [Min(1.0f)]
+    private float downVelSpeed = 2.0f;
+
+    [SerializeField]
     private Animator animator;
 
 
@@ -59,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (onGround && !life.IsDeath())
         {
-            rb.AddForce(transform.up * jumpSpeed, ForceMode.Impulse);
+            rb.AddForce(transform.up * jumpSpeed, ForceMode.VelocityChange);
         }
     }
 
@@ -93,11 +97,12 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector3 startPos = transform.position + -transform.up * capsuleCollider.bounds.size.y / 2;
             Vector3 dir = Vector3.Normalize(collision.GetContact(0).point - startPos);
-            print("Enter " + dir);
             onGround = dir.y > 0.5f;
 
         }
     }
+
+    
 
     private void OnCollisionExit(Collision collision)
     {
@@ -127,6 +132,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!life.IsDeath())
         {
+            if (!onGround)
+            {
+                rb.AddForce(-transform.up * Time.deltaTime * downVelSpeed, ForceMode.Impulse);
+            }
             transform.forward = Vector3.Normalize(enemy.transform.position - transform.position);
             Quaternion currentRotation = transform.rotation;
             transform.rotation = Quaternion.Euler(0, currentRotation.eulerAngles.y, 0);

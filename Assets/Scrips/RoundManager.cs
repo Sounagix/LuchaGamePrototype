@@ -233,6 +233,6 @@ public class RoundManager : MonoBehaviour
                 }
                 break;
         }
-        
+        GameManager.instance.retryActive = true;
     }
 }

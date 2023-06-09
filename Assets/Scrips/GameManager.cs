@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public int currentRound = 0;
     public int player1RoundWinned = 0;
     public int player2RoundWinned = 0;
+    public bool retryActive = false;
 
     private void Awake()
     {
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadScene(int index)
     {
+        retryActive = false;
         instance.currentRound = 0;
         instance.player1RoundWinned = 0;
         instance.player2RoundWinned = 0;

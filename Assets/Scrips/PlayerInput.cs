@@ -7,6 +7,8 @@ using UnityEngine.InputSystem.Layouts;
 public class PlayerInput : MonoBehaviour
 {
     [SerializeField]
+    private DISPOSITIVE[] priorityInput;
+
     private DISPOSITIVE dISPOSITIVE;
 
     private PlayerController inputActions;
@@ -85,17 +87,39 @@ public class PlayerInput : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         playerAttack = GetComponent<PlayerAttack>();
         life = GetComponent<Life>();
-        var device = PeripheralsFinder.instance.GetDevice(dISPOSITIVE);
-        if (device.Value.Equals(dISPOSITIVE))
+
+
+        bool deviceFinded = false;
+        int index = 0;
+        do
         {
-            SetUpDispositive(device.Key, device.Value);
+            var device = PeripheralsFinder.instance.GetDevice(priorityInput[index]);
+            dISPOSITIVE = device.Value;
+            if (device.Key != null && device.Value.Equals(dISPOSITIVE))
+            {
+                SetUpDispositive(device.Key, device.Value);
+                deviceFinded = true;
+            }
+            else
+            {
+                index++;
+            }
+
         }
-        else
-        {
-            dISPOSITIVE = DISPOSITIVE.KEYBOARD;
-            var newDevice = PeripheralsFinder.instance.GetDevice(dISPOSITIVE);
-            SetUpDispositive(newDevice.Key, newDevice.Value);
-        }
+        while (!deviceFinded && index < priorityInput.Length);
+
+
+        //var device = PeripheralsFinder.instance.GetDevice(dISPOSITIVE);
+        //if (device.Value.Equals(dISPOSITIVE))
+        //{
+        //    SetUpDispositive(device.Key, device.Value);
+        //}
+        //else
+        //{
+        //    dISPOSITIVE = DISPOSITIVE.KEYBOARD;
+        //    var newDevice = PeripheralsFinder.instance.GetDevice(dISPOSITIVE);
+        //    SetUpDispositive(newDevice.Key, newDevice.Value);
+        //}
     }
 
     public bool SetUpDispositive(InputDevice _inputDevice, DISPOSITIVE _dISPOSITIVE)
@@ -110,6 +134,7 @@ public class PlayerInput : MonoBehaviour
                     moveActions = inputActions.KeyBoard.Move;
                     inputActions.KeyBoard.Attack.performed += AttackPlayer;
                     inputActions.KeyBoard.Block.performed += BlockPlayer;
+                    inputActions.KeyBoard.Block.canceled += EndBlock;
                     inputActions.KeyBoard.Kick.performed += KickPlayer;
                     inputActions.KeyBoard.Jump.performed += Jump;
                     inputActions.KeyBoard.Back.performed += Back;
@@ -170,7 +195,15 @@ public class PlayerInput : MonoBehaviour
 
     private void Back(InputAction.CallbackContext context)
     {
-        GameManager.instance.LoadScene(0);
+        if (GameManager.instance.retryActive)
+        {
+            GameManager.instance.LoadScene(1);
+        }
+        else
+        {
+            GameManager.instance.LoadScene(0);
+        }
+        
     }
 
     private void FixedUpdate()

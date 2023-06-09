@@ -26,11 +26,11 @@ public class PlayerAttack : MonoBehaviour
 
     public void Attack()
     {
-        int layer = (1 << enemyLayer);
+        int layer = (1 << enemyLayer | 1 << 9);
         RaycastHit hit;
         Vector3 direction = transform.forward;
         
-        // Debug.DrawRay(transform.position, transform.position + (direction * attackRange), Color.blue, 1.0f);
+         Debug.DrawRay(transform.position, transform.position + (direction * attackRange), Color.blue, 1.0f);
         if (Physics.Raycast(transform.position, direction, out hit, attackRange, layer, QueryTriggerInteraction.Ignore))
         {
             if (hit.collider.CompareTag(enemyTag) && !hit.collider.GetComponent<Life>().IsDeath())
@@ -41,6 +41,35 @@ public class PlayerAttack : MonoBehaviour
                 {
                     animator.SetTrigger("Dance");
                 }
+            }
+            else if (hit.collider.CompareTag("Caja"))
+            {
+                hit.collider.GetComponent<Rigidbody>().AddForce(transform.forward * 50, ForceMode.Impulse);
+            }
+        }
+    }
+
+    public void KickAttack()
+    {
+        int layer = (1 << enemyLayer);
+        RaycastHit hit;
+        Vector3 direction = transform.forward;
+
+        // Debug.DrawRay(transform.position, transform.position + (direction * attackRange), Color.blue, 1.0f);
+        if (Physics.Raycast(transform.position, direction, out hit, attackRange, layer, QueryTriggerInteraction.Ignore))
+        {
+            if (hit.collider.CompareTag(enemyTag) && !hit.collider.GetComponent<Life>().IsDeath())
+            {
+                Debug.DrawLine(transform.position, hit.point, Color.red, 1.0f);
+                bool killer = hit.collider.GetComponent<Life>().DamageLife(damage);
+                if (killer)
+                {
+                    animator.SetTrigger("Dance");
+                }
+            }
+            else if (hit.collider.CompareTag("Caja"))
+            {
+                hit.collider.GetComponent<Rigidbody2D>().AddForce(transform.forward * 5, ForceMode2D.Impulse);
             }
         }
     }
