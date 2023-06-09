@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
+
     public int currentRound = 0;
     public int player1RoundWinned = 0;
     public int player2RoundWinned = 0;

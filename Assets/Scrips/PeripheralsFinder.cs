@@ -6,7 +6,7 @@ using UnityEngine.InputSystem.Layouts;
 
 public enum DISPOSITIVE : int
 {
-    KEYBOARD, XBOX, PS, JOYSTICK, GAMEPAD ,NULL, 
+    KEYBOARD, XBOX, PS, JOYSTICK, GAMEPAD,SHARED_KEYBOARD_PLAYER1, SHARED_KEYBOARD_PLAYER2, NULL, 
 }
 
 
@@ -15,6 +15,10 @@ public class PeripheralsFinder : MonoBehaviour
     private bool[] dispositiveUsed;
 
     public static PeripheralsFinder instance;
+
+    private bool sharedKeyboardActive = false;
+
+    private bool playerOneShared = true;
 
     private void OnEnable()
     {
@@ -25,6 +29,11 @@ public class PeripheralsFinder : MonoBehaviour
         foreach (var dispositive in dispositivos)
         {
             print(dispositive.description.deviceClass);
+        }
+
+        if (dispositivos.Length == 2)
+        {
+            sharedKeyboardActive = true;
         }
 
         //player1.SetUpDispositive(dispositivos[0]);
@@ -42,7 +51,18 @@ public class PeripheralsFinder : MonoBehaviour
 
     public KeyValuePair<InputDevice, DISPOSITIVE> GetDevice(DISPOSITIVE dISPOSITIVE)
     {
+
         InputDevice[] dispositivos = InputSystem.devices.ToArray();
+        if (sharedKeyboardActive)
+        {
+            DISPOSITIVE dISPOSITIVE_SHARED = playerOneShared ? DISPOSITIVE.SHARED_KEYBOARD_PLAYER1 : DISPOSITIVE.SHARED_KEYBOARD_PLAYER2;
+
+            if (dISPOSITIVE_SHARED.Equals(DISPOSITIVE.SHARED_KEYBOARD_PLAYER2))
+                playerOneShared = true;
+            else playerOneShared = false;
+            return new KeyValuePair<InputDevice, DISPOSITIVE>(dispositivos[0], dISPOSITIVE_SHARED);
+        }
+
         bool diviceFinded = false;
         int numDispositive = dispositivos.Length;
         int index = 0;
@@ -136,6 +156,7 @@ public class PeripheralsFinder : MonoBehaviour
 
     private void Awake()
     {
+        playerOneShared = true;
         if (instance == null)
         {
             instance = this;

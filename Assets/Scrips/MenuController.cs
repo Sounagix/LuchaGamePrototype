@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class MenuController : MonoBehaviour
 {
     [SerializeField]
+    private DISPOSITIVE[] priorityInput;
+
     private DISPOSITIVE dISPOSITIVE;
 
     [SerializeField]
@@ -18,6 +20,15 @@ public class MenuController : MonoBehaviour
 
     [SerializeField]
     private Image exitButton;
+
+    [SerializeField]
+    private AudioClip buttonSound;
+
+    [SerializeField]
+    private AudioSource audioSource;
+
+    [SerializeField]
+    private float switchTime;
 
     private int index = 0;
 
@@ -55,6 +66,14 @@ public class MenuController : MonoBehaviour
                 inputActions.GamePad.Jump.performed -= ClicBoton;
                 inputActions.GamePad.Disable();
                 break;
+            case DISPOSITIVE.SHARED_KEYBOARD_PLAYER1:
+                inputActions.KeyBoardShared.P1Jump.performed -= ClicBoton;
+                inputActions.KeyBoardShared.Disable();
+                break;
+            case DISPOSITIVE.SHARED_KEYBOARD_PLAYER2:
+                inputActions.KeyBoardShared.P2Jump1.performed -= ClicBoton;
+                inputActions.KeyBoardShared.Disable();
+                break;
         }
         moveActions.Disable();
         inputActions.Disable();
@@ -62,22 +81,43 @@ public class MenuController : MonoBehaviour
 
     private void Start()
     {
-        var device = PeripheralsFinder.instance.GetDevice(dISPOSITIVE);
-        if (device.Value.Equals(dISPOSITIVE))
+        bool deviceFinded = false;
+        int index = 0;
+        do
         {
-            SetUpDispositive(device.Key);
+            var device = PeripheralsFinder.instance.GetDevice(priorityInput[index]);
+            dISPOSITIVE = device.Value;
+            if (device.Key != null && device.Value.Equals(dISPOSITIVE))
+            {
+                SetUpDispositive(device.Key);
+                deviceFinded = true;
+            }
+            else
+            {
+                index++;
+            }
+
         }
-        else
-        {
-            dISPOSITIVE = DISPOSITIVE.KEYBOARD;
-            var newDivice = PeripheralsFinder.instance.GetDevice(dISPOSITIVE);
-            SetUpDispositive(device.Key);
-        }
+        while (!deviceFinded && index < priorityInput.Length);
+
+
+        //var device = PeripheralsFinder.instance.GetDevice(dISPOSITIVE);
+        //if (device.Value.Equals(dISPOSITIVE))
+        //{
+        //    SetUpDispositive(device.Key);
+        //}
+        //else
+        //{
+        //    dISPOSITIVE = DISPOSITIVE.KEYBOARD;
+        //    var newDivice = PeripheralsFinder.instance.GetDevice(dISPOSITIVE);
+        //    SetUpDispositive(device.Key);
+        //}
         Showbutton();
     }
 
     private void MueveEntreBotones(Vector2 dir)
     {
+        audioSource.PlayOneShot(buttonSound);
         buttonDown = true;
         if (dir.y  < -0.5f)
         {
@@ -106,7 +146,7 @@ public class MenuController : MonoBehaviour
             }
         }
         
-        Invoke(nameof(BackToTakeInput), 0.5f);
+        Invoke(nameof(BackToTakeInput), switchTime);
     }
 
     private void BackToTakeInput()
@@ -200,6 +240,16 @@ public class MenuController : MonoBehaviour
                     inputActions.GamePad.Enable();
                     moveActions = inputActions.GamePad.Move;
                     inputActions.GamePad.Jump.performed += ClicBoton;
+                    break;
+                case DISPOSITIVE.SHARED_KEYBOARD_PLAYER1:
+                    inputActions.KeyBoardShared.Enable();
+                    moveActions = inputActions.KeyBoardShared.P1Move;
+                    inputActions.KeyBoardShared.P1Jump.performed += ClicBoton;
+                    break;
+                case DISPOSITIVE.SHARED_KEYBOARD_PLAYER2:
+                    inputActions.KeyBoardShared.Enable();
+                    moveActions = inputActions.KeyBoardShared.P2Move1;
+                    inputActions.KeyBoardShared.P2Jump1.performed += ClicBoton;
                     break;
             }
             return true;

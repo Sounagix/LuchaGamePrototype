@@ -75,6 +75,24 @@ public class PlayerInput : MonoBehaviour
                 inputActions.GamePad.Back.performed -= Back;
                 inputActions.GamePad.Disable();
                 break;
+            case DISPOSITIVE.SHARED_KEYBOARD_PLAYER1:
+                inputActions.KeyBoardShared.P1Attack.performed -= AttackPlayer;
+                inputActions.KeyBoardShared.P1Kick.performed -= KickPlayer;
+                inputActions.KeyBoardShared.P1Jump.performed -= Jump;
+                inputActions.KeyBoardShared.P1Block.performed -= BlockPlayer;
+                inputActions.KeyBoardShared.P1Block.canceled -= EndBlock;
+                inputActions.KeyBoardShared.P1Back.performed -= Back;
+                inputActions.KeyBoardShared.Disable();
+                break;
+            case DISPOSITIVE.SHARED_KEYBOARD_PLAYER2:
+                inputActions.KeyBoardShared.P2Attack1.performed -= AttackPlayer;
+                inputActions.KeyBoardShared.P2Kick1.performed -= KickPlayer;
+                inputActions.KeyBoardShared.P2Jump1.performed -= Jump;
+                inputActions.KeyBoardShared.P2Block1.performed -= BlockPlayer;
+                inputActions.KeyBoardShared.P2Block1.canceled -= EndBlock;
+                inputActions.KeyBoardShared.P2Back1.performed -= Back;
+                inputActions.KeyBoardShared.Disable();
+                break;
         }
         moveActions.Disable();
         inputActions.Disable();
@@ -180,6 +198,26 @@ public class PlayerInput : MonoBehaviour
                     inputActions.GamePad.Block.canceled += EndBlock;
                     inputActions.GamePad.Jump.performed += Jump;
                     inputActions.GamePad.Back.performed += Back;
+                    break;
+                case DISPOSITIVE.SHARED_KEYBOARD_PLAYER1:
+                    inputActions.KeyBoardShared.Enable();
+                    moveActions = inputActions.KeyBoardShared.P1Move;
+                    inputActions.KeyBoardShared.P1Attack.performed += AttackPlayer;
+                    inputActions.KeyBoardShared.P1Kick.performed += KickPlayer;
+                    inputActions.KeyBoardShared.P1Jump.performed += Jump;
+                    inputActions.KeyBoardShared.P1Block.performed += BlockPlayer;
+                    inputActions.KeyBoardShared.P1Block.canceled += EndBlock;
+                    inputActions.KeyBoardShared.P1Back.performed += Back;
+                    break;
+                case DISPOSITIVE.SHARED_KEYBOARD_PLAYER2:
+                    inputActions.KeyBoardShared.Enable();
+                    moveActions = inputActions.KeyBoardShared.P2Move1;
+                    inputActions.KeyBoardShared.P2Attack1.performed += AttackPlayer;
+                    inputActions.KeyBoardShared.P2Kick1.performed += KickPlayer;
+                    inputActions.KeyBoardShared.P2Jump1.performed += Jump;
+                    inputActions.KeyBoardShared.P2Block1.performed += BlockPlayer;
+                    inputActions.KeyBoardShared.P2Block1.canceled += EndBlock;
+                    inputActions.KeyBoardShared.P2Back1.performed += Back;
                     break;
                 default:
                     break;

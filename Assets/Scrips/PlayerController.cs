@@ -450,6 +450,342 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""KeyBoardShared"",
+            ""id"": ""134b8cf7-d957-42dc-97a9-bf6389a1bf9e"",
+            ""actions"": [
+                {
+                    ""name"": ""P1Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""46b9600e-0f52-4682-a6c9-eefbe21671ee"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""P1Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""a1718547-c0cd-4e3a-86dc-fa9bca40d741"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""P1Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""522e8a08-63b6-49bb-b219-6ba6f41cdc8d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""P1Kick"",
+                    ""type"": ""Button"",
+                    ""id"": ""546ea3d7-ea16-40aa-b625-b3352782e6fa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""P1Block"",
+                    ""type"": ""Button"",
+                    ""id"": ""70f5131d-0df0-4310-a649-798e564dfcac"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""P1Back"",
+                    ""type"": ""Button"",
+                    ""id"": ""9b267a69-167d-440b-99f9-e1e731071476"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""P2Move1"",
+                    ""type"": ""Value"",
+                    ""id"": ""0f8df058-89b7-424c-957c-9c9195e9877b"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""P2Attack1"",
+                    ""type"": ""Button"",
+                    ""id"": ""537b7a45-7688-41c6-815a-0f59b921d91e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""P2Jump1"",
+                    ""type"": ""Button"",
+                    ""id"": ""eb0e7e8e-72e0-415e-b28f-7968639092aa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""P2Kick1"",
+                    ""type"": ""Button"",
+                    ""id"": ""133b496b-d874-4c2e-aaf4-4edde980d92a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""P2Block1"",
+                    ""type"": ""Button"",
+                    ""id"": ""29f11566-7a64-4bd3-b761-5e340e6a1fd5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""P2Back1"",
+                    ""type"": ""Button"",
+                    ""id"": ""9b6ee044-f618-4a17-a48e-df7cae927e8d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""14327a2f-e030-48c6-8725-9cd8bc847a6b"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P1Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""7bf3fa36-184d-4777-8ce2-80b80936c511"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P1Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""1fd973cf-926d-4faa-86f8-a51256f53dfb"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P1Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""ed117eee-4112-45da-83db-f11dccfbd489"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P1Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""4f56e482-b9a8-4094-8d4c-26dff83b2864"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P1Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c521c45e-2457-4b8e-b467-131424e39f0b"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P1Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ecd4e664-6c59-41c2-b845-cbc0f2fe0254"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P1Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cd014520-d035-4eb8-823c-ce962d7213c6"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P1Kick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7ada283b-7339-44d6-a264-2be334dc7d86"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P1Block"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""13ff29d7-8169-4e76-aacd-7a681f881230"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P1Back"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""9675e0fb-6e25-4412-8f5a-fde920e6659e"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P2Move1"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""e52e825a-646a-4b0c-87f5-ca7ff0310731"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P2Move1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""e6163ed8-6a39-481d-bce7-68eac9cb5df5"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P2Move1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""36efa9b6-6d8f-43f5-bfdc-990428f9860e"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P2Move1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""eda0bbad-3657-4c49-a322-683218383f10"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P2Move1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""51ff15d0-454b-468b-9ddd-9ad8b8eb67dc"",
+                    ""path"": ""<Keyboard>/numpad1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P2Attack1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a9648299-4c1f-42da-8b19-413eb9c0d03b"",
+                    ""path"": ""<Keyboard>/numpad0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P2Jump1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0809714f-c04c-4e51-bff0-8c175d40c409"",
+                    ""path"": ""<Keyboard>/numpad2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P2Kick1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""33fbc0d3-90a3-4602-96cd-c8d417242d79"",
+                    ""path"": ""<Keyboard>/numpad5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P2Block1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4e1f5763-64b3-42d9-ab86-91dd89b07819"",
+                    ""path"": ""<Keyboard>/numpad9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P2Back1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -512,6 +848,20 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         m_JoyStick_Kick = m_JoyStick.FindAction("Kick", throwIfNotFound: true);
         m_JoyStick_Block = m_JoyStick.FindAction("Block", throwIfNotFound: true);
         m_JoyStick_Back = m_JoyStick.FindAction("Back", throwIfNotFound: true);
+        // KeyBoardShared
+        m_KeyBoardShared = asset.FindActionMap("KeyBoardShared", throwIfNotFound: true);
+        m_KeyBoardShared_P1Move = m_KeyBoardShared.FindAction("P1Move", throwIfNotFound: true);
+        m_KeyBoardShared_P1Attack = m_KeyBoardShared.FindAction("P1Attack", throwIfNotFound: true);
+        m_KeyBoardShared_P1Jump = m_KeyBoardShared.FindAction("P1Jump", throwIfNotFound: true);
+        m_KeyBoardShared_P1Kick = m_KeyBoardShared.FindAction("P1Kick", throwIfNotFound: true);
+        m_KeyBoardShared_P1Block = m_KeyBoardShared.FindAction("P1Block", throwIfNotFound: true);
+        m_KeyBoardShared_P1Back = m_KeyBoardShared.FindAction("P1Back", throwIfNotFound: true);
+        m_KeyBoardShared_P2Move1 = m_KeyBoardShared.FindAction("P2Move1", throwIfNotFound: true);
+        m_KeyBoardShared_P2Attack1 = m_KeyBoardShared.FindAction("P2Attack1", throwIfNotFound: true);
+        m_KeyBoardShared_P2Jump1 = m_KeyBoardShared.FindAction("P2Jump1", throwIfNotFound: true);
+        m_KeyBoardShared_P2Kick1 = m_KeyBoardShared.FindAction("P2Kick1", throwIfNotFound: true);
+        m_KeyBoardShared_P2Block1 = m_KeyBoardShared.FindAction("P2Block1", throwIfNotFound: true);
+        m_KeyBoardShared_P2Back1 = m_KeyBoardShared.FindAction("P2Back1", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -786,6 +1136,127 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         }
     }
     public JoyStickActions @JoyStick => new JoyStickActions(this);
+
+    // KeyBoardShared
+    private readonly InputActionMap m_KeyBoardShared;
+    private IKeyBoardSharedActions m_KeyBoardSharedActionsCallbackInterface;
+    private readonly InputAction m_KeyBoardShared_P1Move;
+    private readonly InputAction m_KeyBoardShared_P1Attack;
+    private readonly InputAction m_KeyBoardShared_P1Jump;
+    private readonly InputAction m_KeyBoardShared_P1Kick;
+    private readonly InputAction m_KeyBoardShared_P1Block;
+    private readonly InputAction m_KeyBoardShared_P1Back;
+    private readonly InputAction m_KeyBoardShared_P2Move1;
+    private readonly InputAction m_KeyBoardShared_P2Attack1;
+    private readonly InputAction m_KeyBoardShared_P2Jump1;
+    private readonly InputAction m_KeyBoardShared_P2Kick1;
+    private readonly InputAction m_KeyBoardShared_P2Block1;
+    private readonly InputAction m_KeyBoardShared_P2Back1;
+    public struct KeyBoardSharedActions
+    {
+        private @PlayerController m_Wrapper;
+        public KeyBoardSharedActions(@PlayerController wrapper) { m_Wrapper = wrapper; }
+        public InputAction @P1Move => m_Wrapper.m_KeyBoardShared_P1Move;
+        public InputAction @P1Attack => m_Wrapper.m_KeyBoardShared_P1Attack;
+        public InputAction @P1Jump => m_Wrapper.m_KeyBoardShared_P1Jump;
+        public InputAction @P1Kick => m_Wrapper.m_KeyBoardShared_P1Kick;
+        public InputAction @P1Block => m_Wrapper.m_KeyBoardShared_P1Block;
+        public InputAction @P1Back => m_Wrapper.m_KeyBoardShared_P1Back;
+        public InputAction @P2Move1 => m_Wrapper.m_KeyBoardShared_P2Move1;
+        public InputAction @P2Attack1 => m_Wrapper.m_KeyBoardShared_P2Attack1;
+        public InputAction @P2Jump1 => m_Wrapper.m_KeyBoardShared_P2Jump1;
+        public InputAction @P2Kick1 => m_Wrapper.m_KeyBoardShared_P2Kick1;
+        public InputAction @P2Block1 => m_Wrapper.m_KeyBoardShared_P2Block1;
+        public InputAction @P2Back1 => m_Wrapper.m_KeyBoardShared_P2Back1;
+        public InputActionMap Get() { return m_Wrapper.m_KeyBoardShared; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(KeyBoardSharedActions set) { return set.Get(); }
+        public void SetCallbacks(IKeyBoardSharedActions instance)
+        {
+            if (m_Wrapper.m_KeyBoardSharedActionsCallbackInterface != null)
+            {
+                @P1Move.started -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP1Move;
+                @P1Move.performed -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP1Move;
+                @P1Move.canceled -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP1Move;
+                @P1Attack.started -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP1Attack;
+                @P1Attack.performed -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP1Attack;
+                @P1Attack.canceled -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP1Attack;
+                @P1Jump.started -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP1Jump;
+                @P1Jump.performed -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP1Jump;
+                @P1Jump.canceled -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP1Jump;
+                @P1Kick.started -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP1Kick;
+                @P1Kick.performed -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP1Kick;
+                @P1Kick.canceled -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP1Kick;
+                @P1Block.started -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP1Block;
+                @P1Block.performed -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP1Block;
+                @P1Block.canceled -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP1Block;
+                @P1Back.started -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP1Back;
+                @P1Back.performed -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP1Back;
+                @P1Back.canceled -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP1Back;
+                @P2Move1.started -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP2Move1;
+                @P2Move1.performed -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP2Move1;
+                @P2Move1.canceled -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP2Move1;
+                @P2Attack1.started -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP2Attack1;
+                @P2Attack1.performed -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP2Attack1;
+                @P2Attack1.canceled -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP2Attack1;
+                @P2Jump1.started -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP2Jump1;
+                @P2Jump1.performed -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP2Jump1;
+                @P2Jump1.canceled -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP2Jump1;
+                @P2Kick1.started -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP2Kick1;
+                @P2Kick1.performed -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP2Kick1;
+                @P2Kick1.canceled -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP2Kick1;
+                @P2Block1.started -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP2Block1;
+                @P2Block1.performed -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP2Block1;
+                @P2Block1.canceled -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP2Block1;
+                @P2Back1.started -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP2Back1;
+                @P2Back1.performed -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP2Back1;
+                @P2Back1.canceled -= m_Wrapper.m_KeyBoardSharedActionsCallbackInterface.OnP2Back1;
+            }
+            m_Wrapper.m_KeyBoardSharedActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @P1Move.started += instance.OnP1Move;
+                @P1Move.performed += instance.OnP1Move;
+                @P1Move.canceled += instance.OnP1Move;
+                @P1Attack.started += instance.OnP1Attack;
+                @P1Attack.performed += instance.OnP1Attack;
+                @P1Attack.canceled += instance.OnP1Attack;
+                @P1Jump.started += instance.OnP1Jump;
+                @P1Jump.performed += instance.OnP1Jump;
+                @P1Jump.canceled += instance.OnP1Jump;
+                @P1Kick.started += instance.OnP1Kick;
+                @P1Kick.performed += instance.OnP1Kick;
+                @P1Kick.canceled += instance.OnP1Kick;
+                @P1Block.started += instance.OnP1Block;
+                @P1Block.performed += instance.OnP1Block;
+                @P1Block.canceled += instance.OnP1Block;
+                @P1Back.started += instance.OnP1Back;
+                @P1Back.performed += instance.OnP1Back;
+                @P1Back.canceled += instance.OnP1Back;
+                @P2Move1.started += instance.OnP2Move1;
+                @P2Move1.performed += instance.OnP2Move1;
+                @P2Move1.canceled += instance.OnP2Move1;
+                @P2Attack1.started += instance.OnP2Attack1;
+                @P2Attack1.performed += instance.OnP2Attack1;
+                @P2Attack1.canceled += instance.OnP2Attack1;
+                @P2Jump1.started += instance.OnP2Jump1;
+                @P2Jump1.performed += instance.OnP2Jump1;
+                @P2Jump1.canceled += instance.OnP2Jump1;
+                @P2Kick1.started += instance.OnP2Kick1;
+                @P2Kick1.performed += instance.OnP2Kick1;
+                @P2Kick1.canceled += instance.OnP2Kick1;
+                @P2Block1.started += instance.OnP2Block1;
+                @P2Block1.performed += instance.OnP2Block1;
+                @P2Block1.canceled += instance.OnP2Block1;
+                @P2Back1.started += instance.OnP2Back1;
+                @P2Back1.performed += instance.OnP2Back1;
+                @P2Back1.canceled += instance.OnP2Back1;
+            }
+        }
+    }
+    public KeyBoardSharedActions @KeyBoardShared => new KeyBoardSharedActions(this);
     private int m_KeyBoardSchemeIndex = -1;
     public InputControlScheme KeyBoardScheme
     {
@@ -839,5 +1310,20 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         void OnKick(InputAction.CallbackContext context);
         void OnBlock(InputAction.CallbackContext context);
         void OnBack(InputAction.CallbackContext context);
+    }
+    public interface IKeyBoardSharedActions
+    {
+        void OnP1Move(InputAction.CallbackContext context);
+        void OnP1Attack(InputAction.CallbackContext context);
+        void OnP1Jump(InputAction.CallbackContext context);
+        void OnP1Kick(InputAction.CallbackContext context);
+        void OnP1Block(InputAction.CallbackContext context);
+        void OnP1Back(InputAction.CallbackContext context);
+        void OnP2Move1(InputAction.CallbackContext context);
+        void OnP2Attack1(InputAction.CallbackContext context);
+        void OnP2Jump1(InputAction.CallbackContext context);
+        void OnP2Kick1(InputAction.CallbackContext context);
+        void OnP2Block1(InputAction.CallbackContext context);
+        void OnP2Back1(InputAction.CallbackContext context);
     }
 }

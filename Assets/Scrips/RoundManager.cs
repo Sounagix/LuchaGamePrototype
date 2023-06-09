@@ -62,6 +62,9 @@ public class RoundManager : MonoBehaviour
     private AudioClip round3Sound;
 
     [SerializeField]
+    private AudioClip buttonSound;
+
+    [SerializeField]
     private AudioSource audioSource;
 
     [SerializeField]
@@ -135,6 +138,11 @@ public class RoundManager : MonoBehaviour
         AddRoundPoints();
         ManageRounds();
 
+    }
+
+    public void playButtonSound()
+    {
+        audioSource.PlayOneShot(buttonSound);
     }
 
     private void AddRoundPoints()
